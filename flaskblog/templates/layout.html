@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
+
+    {% if title %}
+    <title>Ana Graca - {{ title }}</title>
+    {% else %}
+    <title>Ana Graca</title>
+    {% endif %}
+</head>
+
+<body>
+    <style>
+        .legendas {
+            border-radius: 10px;
+            border: 2px solid #6295b9;
+            background-color: #6295b9;
+            color: rgb(250, 238, 238);
+            padding: 2px;
+        }
+
+        .bg-steel {
+            background-color: #000a1a;
+        }
+
+        .content-section {
+            background: #e8ddcb;
+            padding: 10px 10px;
+            border: 1.5px solid #031634;
+            border-radius: 3px;
+            margin-bottom: 20px;
+            margin-top: 20px;
+        }
+
+        .site-header .navbar-nav .nav-link {
+            color: #e2e5e7;
+        }
+
+        .container {
+            background-color: #000a1a;
+        }
+
+        .menu {
+            margin-top: 25px;
+        }
+
+        .menu_button {
+            display: inline-block;
+            border: none;
+            padding: 1rem 2rem;
+            margin: 0;
+            text-decoration: none;
+            background: 0;
+            color: #ffffff;
+            font-family: sans-serif;
+            font-size: 1rem;
+            cursor: pointer;
+            text-align: center;
+            transition: background 100ms ease-in-out,
+                        transform 150ms ease;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+        }
+
+        .menu_button:hover,
+        .menu_button:focus {
+            background: #033649;
+        }
+
+        .menu_button:focus {
+            outline-offset: -4px;
+        }
+
+        .menu_button:active {
+            transform: scale(0.99);
+        }
+    </style>
+
+    <header class="site-header">
+        <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
+            <div class="container">
+                <a class="navbar-brand mr-4" href="/">Ana Carolina Gontijo Graca</a>
+            </div>
+        </nav>
+    </header>
+
+
+    <main role="main" class="container">
+        <div class="row">
+            <div class="col-md-9">
+                {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                {% for category, message in messages %}
+                <div class="alert alert-{{ category }}">
+                    {{ message }}
+                </div>
+                {% endfor %}
+                {% endif %}
+                {% endwith %}
+                {% block content %}{% endblock %}
+            </div>
+            <div class="col-md-3 menu">
+                <center><input type="button" value="Sobre Mim" class="menu_button"></center>
+                <center><input type="button" value="Graduação" class="menu_button"></center>
+                <center><input type="button" value="Cursos Externos" class="menu_button"></center>
+            </div>
+        </div>
+    </main>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
