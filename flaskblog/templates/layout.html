@@ -13,13 +13,10 @@
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
 
     {% if title %}
-    <title>Ana Graca - {{ title }}</title>
+    <title>Ana Graca CV - {{ title }}</title>
     {% else %}
-    <title>Ana Graca</title>
+    <title>Ana Graca CV</title>
     {% endif %}
-</head>
-
-<body>
     <style>
         .legendas {
             border-radius: 10px;
@@ -30,28 +27,41 @@
         }
 
         .bg-steel {
-            background-color: #000a1a;
+            background-color: #05668D;
+        }
+
+        .content {
+            padding: 10px 10px;
+            margin-bottom: 20px;
+            margin-top: 20px;
         }
 
         .content-section {
-            background: #e8ddcb;
+            background: #ffffff;
             padding: 10px 10px;
-            border: 1.5px solid #031634;
-            border-radius: 3px;
+            border: 1.5px solid #413e4a;
+            border-radius: 10px;
             margin-bottom: 20px;
             margin-top: 20px;
         }
 
         .site-header .navbar-nav .nav-link {
-            color: #e2e5e7;
+            color: #05668D;
         }
 
         .container {
-            background-color: #000a1a;
+            background: #ffffff;
+            border-radius: 10px;
+            padding: 10px 10px;
         }
 
         .menu {
             margin-top: 25px;
+            background: #028090;
+            padding: 10px 10px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            margin-top: 20px;
         }
 
         .menu_button {
@@ -66,6 +76,7 @@
             font-size: 1rem;
             cursor: pointer;
             text-align: center;
+            border-radius: 10px;
             transition: background 100ms ease-in-out,
                         transform 150ms ease;
             -webkit-appearance: none;
@@ -74,7 +85,7 @@
 
         .menu_button:hover,
         .menu_button:focus {
-            background: #033649;
+            background: #00A896;
         }
 
         .menu_button:focus {
@@ -84,16 +95,75 @@
         .menu_button:active {
             transform: scale(0.99);
         }
+
+
+        .main_img {
+            height: 250px;
+            width: 250px;
+            margin-right: 20px;
+            margin-bottom: 16px;
+            border-radius: 140px;
+            border: 15px solid #028090;
+        }
+
+        body {
+            background: #b8d2d9;
+        }
+
+        .logo {
+            height: 20px;
+            width: 20px;
+        }
+
+        .big_logo {
+            height: 150px;
+            width: 150px;
+        }
+
+        .brief_descr {
+            color: #05668D;
+        }
+
+        .brief_descr h1 {
+            color: #05668D;
+            font-size: 30px;
+        }
+
+        .brief_descr h2 {
+            color: #0a76a2;
+            font-size: 18px;
+        }
+
+        .brief_descr .contacts {
+            color: #616161;
+            font-size: 15px;
+        }
+
+        .studies h1{
+            font-size: 25px;
+        }
+
+        .studies h2{
+            font-size: 20px;
+        }
+
+        .table_header {
+            font-weight: bold;
+        }
+
+
     </style>
+</head>
+
+<body>
 
     <header class="site-header">
         <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
-            <div class="container">
-                <a class="navbar-brand mr-4" href="/">Ana Carolina Gontijo Graca</a>
+            <div>
+                <a class="navbar-brand mr-4" href="/">Ana Carolina Gontijo Graça</a>
             </div>
         </nav>
     </header>
-
 
     <main role="main" class="container">
         <div class="row">
@@ -110,9 +180,12 @@
                 {% block content %}{% endblock %}
             </div>
             <div class="col-md-3 menu">
-                <center><input type="button" value="Sobre Mim" class="menu_button"></center>
-                <center><input type="button" value="Graduação" class="menu_button"></center>
-                <center><input type="button" value="Cursos Externos" class="menu_button"></center>
+                <center><a href="/about"><input type="button" value="Sobre Mim" class="menu_button"></a></center>
+                <center><a href="/studies"><input type="button" value="Graduação" class="menu_button"></a></center>
+                <center><a href="/external-courses"><input type="button" value="Cursos Externos" class="menu_button"></a></center>
+                <center><a href="/experience"><input type="button" value="Experiência" class="menu_button"></a></center>
+                <center><a href="/documents"><input type="button" value="Documentos" class="menu_button"></a></center>
+                <center><a href="/projects"><input type="button" value="Projetos" class="menu_button"></a></center>
             </div>
         </div>
     </main>

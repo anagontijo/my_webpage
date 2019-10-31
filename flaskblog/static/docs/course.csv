@@ -1,0 +1,35 @@
+1,DCC111,Matemática Discreta,87,B
+1,MAT105,Geometria Analítica e Álgebra Linear,94,A
+1,ICE106,Introdução a Matemática Computacional,95,A
+1,FIS054,Introdução a Física Experimental,100,A
+1,MAT001,Cálculo Diferencial e Integral I,80,B
+2,MAT039,Cálculo Diferencial e Integral II,80,B
+2,DCC004,Algoritmos e Estrutura de Dados II,86,B
+2,MAT034,Álgebra A,100,A
+2,FIS065,Fundamentos de Mecânica,65,D
+2,DCC011,Introdução a Banco de Dados,84,B
+3,MAT015,Equações Diferenciais A,70,C
+3,MAT002,Cálculo Diferencial e Integral III,75,C
+3,FIS055,Física Experimental MT,76,C
+3,DCC033,Análise Numérica,73,C
+3,DCC005,Algoritmos e Estrutura de Dados III,77,C
+4,FIS069,Fundamentos de Eletromagnetismo,88,B
+4,MAT016,Equações Diferenciais B,64,D
+4,MAT048,Álgebra Linear I,83,B
+4,MAT118,Variável Complexa,71,C
+5,DCC028,Inteligência Artificial,81,B
+5,MAT213,Álgebra Linear II,66,D
+5,MAT243,Análise I,65,D
+5,DCC129,Fundamentos da Teoria da Computação,85,B
+6,DCC035,Pesquisa Operacional,93,A
+6,EST032,Probabilidade,93,A
+7,MAT245,Análise II,65,D
+7,DCC030,Aprendizado de Máquina,77,C
+7,DCC030,Teoria dos Grafos,75,C
+7,MAT038,Álgebra Linear Numérica,100,A
+7,UNI001,Inglês Instrumental I,98,A
+8,DCC030,Teoria dos Jogos para Computação,0,x
+8,DCC204,Engenharia de Software,0,x
+8,EST039,Processos Estocásticos,0,x
+8,MAT236,Equações Diferenciais Numéricas,0,x
+8,UNI002,Inglês Instrumental II,0,x

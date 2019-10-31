@@ -3,39 +3,49 @@ import secrets
 from PIL import Image
 from flask import render_template, url_for, flash, redirect, request, abort
 from flaskblog import app
-import datetime
+import csv
+
+def get_files():
+    logos = ["linkedin", "github", "trello", "gmail", "telegram","UFMG"]
+    logo_files = {}
+    for logo in logos:
+        logo_files[logo] = url_for('static', filename='logos/'+logo+'.png')
+    image_file = url_for('static', filename='fotos/foto_padrao.jpeg')
+    return logo_files, image_file
+
+def get_courses():
+    courses = []
+    for sem in range(8):
+        courses.append([])
+    with open(os.getcwd()+"/flaskblog/static/docs/course.csv") as csvfile:
+        for row in csv.reader(csvfile, delimiter=',', quotechar='|'):
+            courses[int(row[0])-1].append([])
+            for elem in range(4):
+                courses[int(row[0])-1][-1].append(row[elem+1])
+    return courses
 
 # Rota para a página home do sistema
-@app.route("/", methods=['GET'])
-@app.route("/home", methods=['GET'])
+@app.route("/")
+@app.route("/home")
 def home():
-    image_file = url_for('static', filename='fotos/foto_padrao.jpeg');
-    return render_template("home.html", image_file = image_file)
+    logo_files, image_file = get_files()
+    return render_template("home.html", image_file = image_file,
+                           logo_files = logo_files)
 
 # Rota para a página about do sistema
 @app.route("/about")
 def about():
-    return render_template("about.html", title='Sobre mim')
+    logo_files, image_file = get_files()
+    return render_template("about.html", title='Sobre mim',
+                           image_file = image_file,
+                           logo_files = logo_files)
 
-@app.route('/getmsg/', methods=['GET'])
-def respond():
-    # Retrieve the name from url parameter
-    name = request.args.get("name", None)
-
-    # For debugging
-    print(f"got name {name}")
-
-    response = {}
-
-    # Check if user sent a name at all
-    if not name:
-        response["ERROR"] = "no name found, please send a name."
-    # Check if the user entered a number not a name
-    elif str(name).isdigit():
-        response["ERROR"] = "name can't be numeric."
-    # Now the user entered a valid name
-    else:
-        response["MESSAGE"] = f"Welcome {name} to our awesome platform!!"
-
-    # Return the response in json format
-    return jsonify(response)
+@app.route("/studies")
+def studies():
+    courses = get_courses()
+    print(courses)
+    logo_files, image_file = get_files()
+    return render_template("studies.html", title='Grad',
+                           image_file = image_file,
+                           logo_files = logo_files,
+                           courses=courses)
