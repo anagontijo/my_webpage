@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="content">
+    <div class="row">
+        <div class="col-9 studies">
+            <h1>Curso de graduação em Matemática Computacional</h1>
+            <h2>Percurso de computação</h2>
+        </div>
+        <div class="col-3">
+            <img src="{{ logo_files['UFMG'] }}" class="big_logo">
+        </div>
+    </div>
+    <div class="row table_courses">
+        <div class="col-2 table_header">
+            Código
+        </div>
+        <div class="col-6 table_header">
+            Nome
+        </div>
+        <div class="col-2 table_header">
+            Nota
+        </div>
+        <div class="col-2 table_header">
+            Conceito
+        </div>
+
+
+
+        {% for sem in courses %}
+            <div class="col-12">
+                <center>{{courses.index(sem) + 1}}º período - {{2016+courses.index(sem)//2}}.{{(courses.index(sem))%2+1}}</center>
+            </div>
+            {% for course in sem %}
+                <div class="col-2">
+                    {{ course[0] }}
+                </div>
+                <div class="col-6">
+                    {{ course[1] }}
+                </div>
+                <div class="col-2">
+                    {{ course[2] }}
+                </div>
+                <div class="col-2">
+                    {{ course[3] }}
+                </div>
+            {% endfor %}
+        {% endfor %}
+
+    </div>
+</div>
+{% endblock content %}
