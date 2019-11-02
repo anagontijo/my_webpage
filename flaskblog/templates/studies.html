@@ -10,23 +10,19 @@
             <img src="{{ logo_files['UFMG'] }}" class="big_logo">
         </div>
     </div>
-    <div class="row table_courses">
-        <div class="col-md-2 col-sm-1 table_header">
-            <p class="mobile">Cód.</p>
-            <p class="web">Código</p>
+    <div class="row table_courses web">
+        <div class="col-md-2 col-sm-3 table_header">
+            Código
         </div>
-        <div class="col-md-6 col-sm-9 table_header">
+        <div class="col-md-6 col-sm-3 table_header">
             Nome
         </div>
-        <div class="col-md-2 col-sm-1 table_header">
+        <div class="col-md-2 col-sm-3 table_header">
             Nota
         </div>
-        <div class="col-md-2 col-sm-1 table_header">
-            <p class="mobile">Conc.</p>
-            <p class="web">Conceito</p>
+        <div class="col-md-2 col-sm-3 table_header">
+            Conceito
         </div>
-
-
 
         {% for sem in courses %}
             <div class="col-12">
@@ -45,9 +41,31 @@
                 <div class="col-md-2 col-sm-1">
                     {{ course[3] }}
                 </div>
+            {% endfor %}
         {% endfor %}
-    {% endfor %}
-
+    </div>
+    <div class="row table_courses mobile">
+        <table border="1">
+            <tr>
+                <th>Cód.</th>
+                <th>Nome</th>
+                <th>Nota</th>
+                <th>Conc.</th>
+            </tr>
+            {% for sem in courses %}
+                <tr>
+                    <td colspan="4"><center>{{courses.index(sem) + 1}}º período - {{2016+courses.index(sem)//2}}.{{(courses.index(sem))%2+1}}</center></td>
+                </tr>
+                {% for course in sem %}
+                    <tr>
+                        <td>{{ course[0] }}</td>
+                        <td>{{ course[1] }}</td>
+                        <td>{{ course[2] }}</td>
+                        <td>{{ course[3] }}</td>
+                    </tr>
+                {% endfor %}
+            {% endfor %}
+        </table>
     </div>
 </div>
 {% endblock content %}

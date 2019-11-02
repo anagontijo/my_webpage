@@ -10,20 +10,21 @@
             {% for job in internships %}
                 <div class="row job_course_container">
                     <div class="col-12">
-                        <a href="{{ job[6] }}" class="job_institution"><h1>{{ job[0] }}</h1></a>
+                        <a href="{{ job[6] }}" class="job_institution">{{ job[0] }}</a>
                     </div>
                     <div class="col-12">
                         <p class="position">{{ job[3] }}</p>
                     </div>
-                    <div class="col-6">
+                    <div class="col-md-6 col-sm-12">
                         <p class="area_of_work">{{ job[4] }}</p>
                     </div>
-                    <div class="col-6">
-                        <p class="date" align="right">{{ job[1] }}/{{ job[2] }}</h2>
+                    <div class="col-md-6 col-sm-12">
+                        <p class="date web" align="right">{{ job[1] }}-{{ job[2] }}</h2>
+                        <p class="date mobile" align="right">{{ job[1][:3]+job[1][-2:] }}-{{ job[2][:3]+job[2][-2:] }}</h2>
                     </div>
-                    <div class="col-1"></div>
-                    <div class="col-11">
-                            <p class="job_description">{{ job[5] }}</p>
+                    <div class="col-md-1 col-sm-0"></div>
+                    <div class="col-md-11 col-sm-12">
+                            <p class="job_description" align="justify">{{ job[5] }}</p>
                     </div>
                 </div>
             {% endfor %}

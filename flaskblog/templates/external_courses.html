@@ -13,27 +13,27 @@
                 <h2 class="date" align="right">{{ course[0] }}/{{ course[1] }}</h2>
             </div>
             <div class="col-1"></div>
-            <div class="col-10 job_course_container">
+            <div class="col-md-10 col-sm-11 job_course_container">
                 <div class="row">
-                    <div class="col-11">
-                        <p class="brief_description">{{ course[4] }}</p>
+                    <div class="col-md-11 col-sm-12">
+                        <p class="brief_description" align="justify">{{ course[4] }}</p>
                     </div>
-                    <div class="col-1"></div>
+                    <div class="col-md-1 col-sm-0"></div>
                     {% for topic in course[5] %}
                         <div class="col-1"></div>
-                        <div class="col-10">
+                        <div class="col-md-10 col-sm-11">
                             <h1 class="topic">{{ topic[0] }}</h1>
                         </div>
-                        <div class="col-1"></div>
-                        <div class="col-2"></div>
-                        <div class="col-9 topic-description">
+                        <div class="col-md-1 col-sm-0"></div>
+                        <div class="col-md-2 col-sm-1"></div>
+                        <div class="col-md-9 col-sm-11 topic-description" align="justify">
                             {{ topic[1] }}
                         </div>
-                        <div class="col-1"></div>
+                        <div class="col-md-1 col-sm-0"></div>
                     {% endfor %}
                 </div>
             </div>
-            <div class="col-1"></div>
+            <div class="col-md-1 col-sm-0"></div>
         </div>
     {% endfor %}
 </div>

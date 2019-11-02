@@ -173,6 +173,10 @@
         color: #777777;
     }
 
+    .job_institution {
+        font-size: 25px;
+    }
+
     /* External Courses */
     .institution {
         font-size: 25px;
@@ -347,7 +351,7 @@
     /* Jobs & External Courses style */
     .date {
         color: #aaaaaa;
-        font-size: 25px;
+        font-size: 20px;
         font-style: italic;
     }
 
@@ -362,12 +366,17 @@
     /* Jobs */
     .position {
         color: #444444;
-        font-size: 30px;
+        font-size: 25px;
     }
 
     .area_of_work {
-        font-size: 25px;
+        font-size: 20px;
         color: #777777;
+    }
+
+    .job_institution {
+        font-size: 30px;
+        color: #333333;
     }
 
     /* External Courses */
