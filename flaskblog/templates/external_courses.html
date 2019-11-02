@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="content">
+    {% for course in ext_courses%}
+        <div class="row">
+            <div class="col-12">
+                <a href="{{ course[6] }}" class="ext_course" target="_blank"><h1>{{ course[3] }}</h1></a>
+            </div>
+            <div class="col-9">
+                <h2 class="institution">{{ course[2] }}</h2>
+            </div>
+            <div class="col-3">
+                <h2 class="date">{{ course[0] }}/{{ course[1] }}</h2>
+            </div>
+            <div class="col-11">
+                <div class="row">
+                    <div class="col-1"></div>
+                    <div class="col-10">
+                        <p class="brief_description">{{ course[4] }}</p>
+                    </div>
+                    <div class="col-1"></div>
+                    {% for topic in course[5] %}
+                        <div class="col-2"></div>
+                        <div class="col-9">
+                            <h1 class="topic">{{ topic[0] }}</h1>
+                        </div>
+                        <div class="col-1"></div>
+                        <div class="col-3"></div>
+                        <div class="col-8 topic-description">
+                            {{ topic[1] }}
+                        </div>
+                        <div class="col-1"></div>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="col-1"></div>
+        </div>
+    {% endfor %}
+</div>
+{% endblock content %}

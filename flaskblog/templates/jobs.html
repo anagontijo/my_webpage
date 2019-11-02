@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="content">
+    <div class="row">
+        <div class="col-12">
+            <h1>Estágios</h1>
+        </div>
+        <div class="col-1"></div>
+        <div class="col-11">
+            {% for job in internships %}
+                <div class="row job_container">
+                    <div class="col-12">
+                        <a href="{{ job[6] }}" class="job_institution" target="_blank"><h1>{{ job[0] }}</h1></a>
+                    </div>
+                    <div class="col-12">
+                        <p class="position">{{ job[3] }}</p>
+                    </div>
+                    <div class="col-6">
+                        <p class="area_of_work">{{ job[4] }}</p>
+                    </div>
+                    <div class="col-6">
+                        <p class="date" align="right">{{ job[1] }}/{{ job[2] }}</h2>
+                    </div>
+                    <div class="col-1"></div>
+                    <div class="col-11">
+                            <p class="job_description">{{ job[5] }}</p>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock content %}
