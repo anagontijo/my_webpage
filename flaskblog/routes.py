@@ -6,7 +6,7 @@ from flaskblog import app
 import csv
 
 def get_files():
-    logos = ["linkedin", "github", "trello", "gmail", "telegram","UFMG"]
+    logos = ["document" ,"linkedin", "github", "trello", "gmail", "telegram","UFMG"]
     logo_files = {}
     for logo in logos:
         logo_files[logo] = url_for('static', filename='logos/'+logo+'.png')
@@ -54,22 +54,34 @@ def get_jobs():
                     jobs[-1].append(row[elem+1])
     return internships, jobs
 
+def get_stylesheet():
+    stylesheet = url_for('static', filename="webpage.css")
+    return stylesheet
+
+def get_cv_path():
+    cv_path = url_for('static', filename="docs/anacggracaresume2019.pdf")
+    return cv_path
+
 # Rota para a página home do sistema
 @app.route("/")
 @app.route("/home")
 def home():
     logo_files, image_file = get_files()
     return render_template("home.html", image_file = image_file,
-                           logo_files = logo_files)
+                           logo_files = logo_files,
+                           stylesheet = get_stylesheet())
 
 # Rota para a página about do sistema
 @app.route("/about")
 def about():
     logo_files, image_file = get_files()
     courses = get_courses()
+    cv_path = get_cv_path()
     return render_template("about.html", title='Sobre mim',
                            image_file = image_file,
-                           logo_files = logo_files)
+                           logo_files = logo_files,
+                           stylesheet = get_stylesheet(),
+                           cv_path = cv_path)
 
 @app.route("/studies")
 def studies():
@@ -78,7 +90,8 @@ def studies():
     return render_template("studies.html", title='Graduação',
                            image_file = image_file,
                            logo_files = logo_files,
-                           courses = courses)
+                           courses = courses,
+                           stylesheet = get_stylesheet())
 
 @app.route("/external-courses")
 def ext_courses():
@@ -87,7 +100,8 @@ def ext_courses():
     return render_template("external_courses.html", title='Cursos externos',
                            logo_files = logo_files,
                            image_file = image_file,
-                           ext_courses = ext_courses)
+                           ext_courses = ext_courses,
+                           stylesheet = get_stylesheet())
 
 @app.route("/jobs")
 def jobs():
@@ -97,4 +111,5 @@ def jobs():
                            logo_files = logo_files,
                            image_file = image_file,
                            internships = internships,
-                           jobs = jobs)
+                           jobs = jobs,
+                           stylesheet = get_stylesheet())

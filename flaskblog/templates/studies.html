@@ -2,26 +2,28 @@
 {% block content %}
 <div class="content">
     <div class="row">
-        <div class="col-9 studies">
+        <div class="col-md-9 col-sm-12 studies">
             <h1>Curso de graduação em Matemática Computacional</h1>
             <h2>Percurso de computação</h2>
         </div>
-        <div class="col-3">
+        <div class="col-md-3 col-sm-0 web">
             <img src="{{ logo_files['UFMG'] }}" class="big_logo">
         </div>
     </div>
     <div class="row table_courses">
-        <div class="col-2 table_header">
-            Código
+        <div class="col-md-2 col-sm-1 table_header">
+            <p class="mobile">Cód.</p>
+            <p class="web">Código</p>
         </div>
-        <div class="col-6 table_header">
+        <div class="col-md-6 col-sm-9 table_header">
             Nome
         </div>
-        <div class="col-2 table_header">
+        <div class="col-md-2 col-sm-1 table_header">
             Nota
         </div>
-        <div class="col-2 table_header">
-            Conceito
+        <div class="col-md-2 col-sm-1 table_header">
+            <p class="mobile">Conc.</p>
+            <p class="web">Conceito</p>
         </div>
 
 
@@ -31,20 +33,20 @@
                 <center>{{courses.index(sem) + 1}}º período - {{2016+courses.index(sem)//2}}.{{(courses.index(sem))%2+1}}</center>
             </div>
             {% for course in sem %}
-                <div class="col-2">
+                <div class="col-md-2 col-sm-1">
                     {{ course[0] }}
                 </div>
-                <div class="col-6">
+                <div class="col-md-6 col-sm-9">
                     {{ course[1] }}
                 </div>
-                <div class="col-2">
+                <div class="col-md-2 col-sm-1">
                     {{ course[2] }}
                 </div>
-                <div class="col-2">
+                <div class="col-md-2 col-sm-1">
                     {{ course[3] }}
                 </div>
-            {% endfor %}
         {% endfor %}
+    {% endfor %}
 
     </div>
 </div>

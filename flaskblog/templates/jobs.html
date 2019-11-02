@@ -1,16 +1,16 @@
 {% extends "layout.html" %}
 {% block content %}
 <div class="content">
-    <div class="row">
+    <div class="row container">
         <div class="col-12">
             <h1>Estágios</h1>
         </div>
         <div class="col-1"></div>
         <div class="col-11">
             {% for job in internships %}
-                <div class="row job_container">
+                <div class="row job_course_container">
                     <div class="col-12">
-                        <a href="{{ job[6] }}" class="job_institution" target="_blank"><h1>{{ job[0] }}</h1></a>
+                        <a href="{{ job[6] }}" class="job_institution"><h1>{{ job[0] }}</h1></a>
                     </div>
                     <div class="col-12">
                         <p class="position">{{ job[3] }}</p>

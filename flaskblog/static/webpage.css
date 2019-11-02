@@ -1,0 +1,394 @@
+@media (min-width: 768px) {
+    /* Colors and base structure of the site */
+    body {
+        padding-top: 65px;
+        background: #dddddd;
+        font-family: monospace;
+    }
+
+    .bg-steel {
+        background-color: #222222;
+    }
+
+    .content {
+        padding: 10px 10px;
+        margin-bottom: 20px;
+        margin-top: 20px;
+    }
+
+    .container {
+        background: #ffffff;
+        margin-top: 40px;
+        border-radius: 10px;
+        padding: 10px 10px;
+    }
+
+    .content-section {
+        background: #ffffff;
+        padding: 10px 10px;
+        border: 1.5px solid #413e4a;
+        border-radius: 10px;
+        margin-bottom: 20px;
+        margin-top: 20px;
+    }
+
+    .site-header .navbar-nav .nav-link {
+        color: #222222;
+    }
+
+    a:link {
+        text-decoration: none;
+    }
+
+    .table_header {
+        font-weight: bold;
+    }
+
+    h1 {
+        color: #444444;
+    }
+
+    h2 {
+        color: #555555;
+    }
+
+    .h3 {
+        color: #666666;
+        line-height: 2;
+    }
+
+    .mobile {
+        display: none;
+    }
+
+    /* Side menu */
+    .menu {
+        margin-top: 25px;
+        background: #888888;
+        padding: 10px 10px;
+        border-radius: 10px;
+        margin-bottom: 20px;
+        margin-top: 20px;
+    }
+
+    .menu_button {
+        display: inline-block;
+        border: none;
+        padding: 1rem 2rem;
+        margin: 0;
+        text-decoration: none;
+        background: 0;
+        color: #ffffff;
+        font-family: sans-serif;
+        font-size: 1rem;
+        cursor: pointer;
+        text-align: center;
+        border-radius: 10px;
+        transition: background 100ms ease-in-out;
+        transition: transform 150ms ease;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+    }
+
+    .menu_button:hover,
+    .menu_button:focus {
+        background: #aaaaaa;
+    }
+
+    .menu_button:focus {
+        outline-offset: -4px;
+    }
+
+    .menu_button:active {
+        transform: scale(0.99);
+    }
+
+    /* Images sizes and stylying*/
+    .main_img {
+        height: 250px;
+        width: 250px;
+        margin-right: 20px;
+        margin-bottom: 16px;
+        border-radius: 125px;
+        filter: grayscale(100%);
+        border: 5px solid #cccccc;
+    }
+
+    .main_img:hover {
+        filter: grayscale(0%);
+    }
+
+    .logo {
+        height: 20px;
+        width: 20px;
+    }
+
+    .big_logo {
+        height: 150px;
+        width: 150px;
+    }
+
+    /* Homepage style */
+    .basic_info {
+        color: #05668D;
+    }
+
+    .basic_info h1 {
+        font-size: 30px;
+    }
+
+    .basic_info h2 {
+        font-size: 18px;
+    }
+
+    .basic_info .h3 {
+        font-size: 15px;
+    }
+
+    /* About style */
+
+    /* Jobs & External Courses style */
+    .date {
+        color: #aaaaaa;
+        font-size: 25px;
+        font-style: italic;
+    }
+
+    .job_course_container {
+        border-left: 5px solid #555555;
+        border-top: 5px solid #555555;
+        border-radius: 5px;
+        margin-left: 10px;
+        margin-top: 10px;
+    }
+
+    /* Jobs */
+    .position {
+        color: #444444;
+        font-size: 30px;
+    }
+
+    .area_of_work {
+        font-size: 25px;
+        color: #777777;
+    }
+
+    /* External Courses */
+    .institution {
+        font-size: 25px;
+        font-style: italic;
+    }
+
+    .topic {
+        font-size: 20px;
+        font-weight: bold;
+        line-height: 2;
+    }
+
+
+    /* Studies style */
+    .studies h1{
+        font-size: 40px;
+    }
+
+    .studies h2{
+        font-size: 30px;
+    }
+}
+
+@media (max-width: 767px) {
+    /* Colors and base structure of the site */
+    body {
+        padding-top: 65px;
+        background: #dddddd;
+        font-family: monospace;
+    }
+
+    .bg-steel {
+        background-color: #222222;
+    }
+
+    .content {
+        padding: 10px 10px;
+        margin-bottom: 20px;
+        margin-left: 5px;
+        margin-right: 5px;
+        margin-top: 20px;
+    }
+
+    .container {
+        background: #ffffff;
+        margin-top: 40px;
+        border-radius: 10px;
+    }
+
+    .content-section {
+        background: #ffffff;
+        padding: 10px 10px;
+        border: 1.5px solid #413e4a;
+        border-radius: 10px;
+        margin-bottom: 20px;
+        margin-top: 20px;
+    }
+
+    .site-header .navbar-nav .nav-link {
+        color: #222222;
+    }
+
+    a:link {
+        text-decoration: none;
+    }
+
+    .table_header {
+        font-weight: bold;
+    }
+
+    .table_courses {
+        font-size: 15;
+    }
+
+    h1 {
+        color: #444444;
+    }
+
+    h2 {
+        color: #555555;
+    }
+
+    .h3 {
+        color: #666666;
+        line-height: 2;
+    }
+
+    .web {
+        display: none;
+    }
+
+    /* Side menu */
+    .menu {
+        margin-top: 25px;
+        background: #888888;
+        padding: 10px 10px;
+        border-radius: 10px;
+        margin-bottom: 20px;
+        margin-top: 20px;
+    }
+
+    .menu_button {
+        display: inline-block;
+        border: none;
+        padding: 1rem 2rem;
+        margin: 0;
+        text-decoration: none;
+        background: 0;
+        color: #ffffff;
+        font-family: sans-serif;
+        font-size: 1rem;
+        cursor: pointer;
+        text-align: center;
+        border-radius: 10px;
+        transition: background 100ms ease-in-out;
+        transition: transform 150ms ease;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+    }
+
+    .menu_button:hover,
+    .menu_button:focus {
+        background: #aaaaaa;
+    }
+
+    .menu_button:focus {
+        outline-offset: -4px;
+    }
+
+    .menu_button:active {
+        transform: scale(0.99);
+    }
+
+    /* Images sizes and stylying*/
+    .main_img {
+        display: none;
+    }
+
+    .main_img:hover {
+        filter: grayscale(0%);
+    }
+
+    .logo {
+        height: 20px;
+        width: 20px;
+    }
+
+    .big_logo {
+        height: 150px;
+        width: 150px;
+    }
+
+    /* Homepage style */
+    .basic_info {
+        color: #05668D;
+    }
+
+    .basic_info h1 {
+        font-size: 25px;
+    }
+
+    .basic_info h2 {
+        font-size: 20px;
+    }
+
+    .basic_info .h3 {
+        font-size: 15px;
+    }
+
+    /* About style */
+
+    /* Jobs & External Courses style */
+    .date {
+        color: #aaaaaa;
+        font-size: 25px;
+        font-style: italic;
+    }
+
+    .job_course_container {
+        border-left: 5px solid #555555;
+        border-top: 5px solid #555555;
+        border-radius: 5px;
+        margin-left: 10px;
+        margin-top: 10px;
+    }
+
+    /* Jobs */
+    .position {
+        color: #444444;
+        font-size: 30px;
+    }
+
+    .area_of_work {
+        font-size: 25px;
+        color: #777777;
+    }
+
+    /* External Courses */
+    .institution {
+        font-size: 25px;
+        font-style: italic;
+    }
+
+    .topic {
+        font-size: 20px;
+        font-weight: bold;
+        line-height: 2;
+    }
+
+
+    /* Studies style */
+    .studies h1{
+        font-size: 40px;
+    }
+
+    .studies h2{
+        font-size: 30px;
+    }
+}
