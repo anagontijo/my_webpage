@@ -54,13 +54,31 @@ def get_jobs():
                     jobs[-1].append(row[elem+1])
     return internships, jobs
 
+def get_projects():
+    projects = []
+    with open(os.getcwd()+"/flaskblog/static/docs/projects.csv") as csvfile:
+        for row in csv.reader(csvfile, delimiter=',', quotechar='"'):
+            projects.append({})
+            projects[-1]["images"] = []
+            for file in row[0].split("/"):
+                projects[-1]["images"].append(url_for('static',
+                                                  filename='fotos/'+file))
+            projects[-1]["main_image"] = projects[-1]["images"][0]
+            projects[-1]["images"] = projects[-1]["images"][1:]
+            projects[-1]["github"] = row[2]
+            projects[-1]["name"] = row[1]
+            projects[-1]["description"] = row[3]
+
+    return projects
+
 def get_stylesheet():
     stylesheet = url_for('static', filename="webpage.css")
     return stylesheet
 
-def get_cv_path():
-    cv_path = url_for('static', filename="docs/anacggracaresume2019.pdf")
-    return cv_path
+def get_cv_paths():
+    cv_path_en = url_for('static', filename="docs/anagracaresume2019_en.pdf")
+    cv_path_pt = url_for('static', filename="docs/anagracaresume2019_pt.pdf")
+    return cv_path_en, cv_path_pt
 
 # Rota para a página home do sistema
 @app.route("/")
@@ -76,12 +94,13 @@ def home():
 def about():
     logo_files, image_file = get_files()
     courses = get_courses()
-    cv_path = get_cv_path()
+    cv_path_en, cv_path_pt = get_cv_paths()
     return render_template("about.html", title='Sobre mim',
                            image_file = image_file,
                            logo_files = logo_files,
                            stylesheet = get_stylesheet(),
-                           cv_path = cv_path)
+                           cv_path_en = cv_path_en,
+                           cv_path_pt = cv_path_pt)
 
 @app.route("/studies")
 def studies():
@@ -112,4 +131,14 @@ def jobs():
                            image_file = image_file,
                            internships = internships,
                            jobs = jobs,
+                           stylesheet = get_stylesheet())
+
+@app.route("/projects")
+def projects():
+    logo_files, image_file = get_files()
+    projects = get_projects()
+    return render_template("projects.html", title='Projetos',
+                           logo_files = logo_files,
+                           image_file = image_file,
+                           projects = projects,
                            stylesheet = get_stylesheet())
