@@ -1,0 +1,35 @@
+1,DCC111,Discrete Mathematics,87,B
+1,MAT105,Linear Algebra and Analytic Geometry,94,A
+1,ICE106,Introduction to Computational Mathematics,95,A
+1,FIS054,Introduction to Experimental Physics,100,A
+1,MAT001,Differential and Integral Calculus I,80,B
+2,MAT039,Differential and Integral Calculus II,80,B
+2,DCC004,Algorithms and Data Structure II,86,B
+2,MAT034,Algebra A,100,A
+2,FIS065,Fundamentals of Mechanics,65,D
+2,DCC011,Introduction to Data Bases,84,B
+3,MAT015,Differential Equations A,70,C
+3,MAT002,Differential and Integral Calculus III,75,C
+3,FIS055,Experimental Physics MT,76,C
+3,DCC033,Numerical Analysis,73,C
+3,DCC005,Algorithms and Data Structure III,77,C
+4,FIS069,Fundamentals of Eletromagnetism,88,B
+4,MAT016,Differential Equations B,64,D
+4,MAT048,Linear Algebra I,83,B
+4,MAT118,Complex Variables,71,C
+5,DCC028,Artificial Intelligence,81,B
+5,MAT213,Linear Algebra II,66,D
+5,MAT243,Analysis I,65,D
+5,DCC129,Fundamentals of the Theory of Computation,85,B
+6,DCC035,Operational Research,93,A
+6,EST032,Probabilities,93,A
+7,MAT245,Analysis II,65,D
+7,DCC030,Machine Learning,77,C
+7,DCC030,Graph Theory,75,C
+7,MAT038,Numerical Linear Algebra,100,A
+7,UNI001,Instrumental English I,98,A
+8,DCC030,Game Theory,0,x
+8,DCC204,Software Engineering,0,x
+8,EST039,Stochastic Processes,0,x
+8,MAT236,Numerical Differential Equations,0,x
+8,UNI002,Instrumental English II,0,x

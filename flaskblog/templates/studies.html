@@ -3,14 +3,20 @@
 <div class="content">
     <div class="row">
         <div class="col-md-9 col-sm-12 studies">
+            {% if language == "pt" %}
             <h1>Curso de graduação em Matemática Computacional</h1>
-            <h2>Percurso de computação</h2>
+            <h2>Ênfase em computação</h2>
+            {% else %}
+            <h1>Bachelor Degree in Computational Mathematics </h1>
+            <h2>Computational Sciences emphasis</h2>
+            {% endif %}
         </div>
         <div class="col-md-3 col-sm-0 web">
             <img src="{{ logo_files['UFMG'] }}" class="big_logo">
         </div>
     </div>
     <div class="row table_courses web">
+        {% if language == "pt"%}
         <div class="col-md-2 col-sm-3 table_header">
             Código
         </div>
@@ -23,7 +29,20 @@
         <div class="col-md-2 col-sm-3 table_header">
             Conceito
         </div>
-
+        {% else %}
+        <div class="col-md-2 col-sm-3 table_header">
+            Code
+        </div>
+        <div class="col-md-6 col-sm-3 table_header">
+            Name
+        </div>
+        <div class="col-md-2 col-sm-3 table_header">
+            Score
+        </div>
+        <div class="col-md-2 col-sm-3 table_header">
+            Grade
+        </div>
+        {% endif %}
         {% for sem in courses %}
             <div class="col-12">
                 <center>{{courses.index(sem) + 1}}º período - {{2016+courses.index(sem)//2}}.{{(courses.index(sem))%2+1}}</center>

@@ -14,7 +14,7 @@
 
 
     {% if title %}
-    <title>Ana Graca CV - {{ title }}</title>
+    <title>Ana Graca CV - {{ title[language] }}</title>
     {% else %}
     <title>Ana Graca CV</title>
     {% endif %}
@@ -23,9 +23,17 @@
 
     <header class="site-header">
         <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
-            <div>
-                <a class="navbar-brand mr-4 web" href="/" target="_self">Ana Carolina Gontijo Graça</span></a>
-                <a class="navbar-brand mr-4 mobile" href="/" target="_self">A.C.G.G.</span></a>
+            <div class="row">
+                <div>
+                    <a class="navbar-brand mr-4 web" href="/" target="_self">Ana Carolina Gontijo Graça</span></a>
+                    <a class="navbar-brand mr-4 mobile" href="/" target="_self">A.C.G.G.</span></a>
+                </div>
+                <div align="right">
+                    <form action="{{ self_url }}" method="post" target="_self">
+                        <input type="image" src="{{ logo_files['uk'] }}" name="english"/>
+                        <input type="image" src="{{ logo_files['br'] }}" name="portuguese"/>
+                    </form>
+                </div>
             </div>
         </nav>
     </header>
@@ -47,11 +55,19 @@
                 {% block content %}{% endblock %}
             </div>
             <div class="col-md-3 col-sm-12 menu">
-                <center><a href="/about" target="_self"><input type="button" value="Sobre Mim" class="menu_button"></a></center>
-                <center><a href="/studies" target="_self"><input type="button" value="Graduação" class="menu_button"></a></center>
-                <center><a href="/external-courses" target="_self"><input type="button" value="Cursos Externos" class="menu_button"></a></center>
-                <center><a href="/jobs" target="_self"><input type="button" value="Experiência" class="menu_button"></a></center>
-                <center><a href="/projects" target="_self"><input type="button" value="Projetos" class="menu_button"></a></center>
+                {% if language == "pt" %}
+                    <center><a href="/about" target="_self"><input type="button" value="Sobre Mim" class="menu_button"></a></center>
+                    <center><a href="/studies" target="_self"><input type="button" value="Graduação" class="menu_button"></a></center>
+                    <center><a href="/external-courses" target="_self"><input type="button" value="Cursos Externos" class="menu_button"></a></center>
+                    <center><a href="/jobs" target="_self"><input type="button" value="Experiência" class="menu_button"></a></center>
+                    <center><a href="/projects" target="_self"><input type="button" value="Projetos" class="menu_button"></a></center>
+                {% else %}
+                    <center><a href="/about" target="_self"><input type="button" value="About" class="menu_button"></a></center>
+                    <center><a href="/studies" target="_self"><input type="button" value="Studies" class="menu_button"></a></center>
+                    <center><a href="/external-courses" target="_self"><input type="button" value="External Courses" class="menu_button"></a></center>
+                    <center><a href="/jobs" target="_self"><input type="button" value="Work Experience" class="menu_button"></a></center>
+                    <center><a href="/projects" target="_self"><input type="button" value="Projects" class="menu_button"></a></center>
+                {% endif %}
             </div>
         </div>
     </main>

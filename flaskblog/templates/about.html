@@ -10,7 +10,11 @@
         <div class="col-md-8 col-sm-12 basic_info">
             <div class="row">
                 <h1>Ana Carolina Gontijo Graça</h1>
-                <h2>Matemática Computacional com enfase em computação</h2>
+                {% if language == "en"%}
+                <h2>Computational Mathematics with emphasis on Computational Sciences undergraduate </h2>
+                {% else %}
+                <h2>Graduanda em Matemática Computacional com ênfase em computação</h2>
+                {% endif %}
             </div>
             <div class="row h3">
                 <div class="col-md-6 col-sm-12">
@@ -37,24 +41,22 @@
         </div>
     </div>
     <div class="row">
+        {% if language == "en"%}
         <div class="col-12 about_text">
-            Meu nome é Ana e sou uma matemática computacional graduada pela UFMG
-            em 2019. Tenho interesse nas áreas de otimização, aprendizado de
-            máquina, inteligência artificial e ciência dos dados em geral. Por
-            parte da matemática meus maiores amores são álgebra linear e teoria
-            dos números. Sou uma pessoa muito curiosa e estudiosa, gosto de
-            aprender novas tecnologias, linguagens (tanto de programação quanto
-            de comunicação) e métodos sempre que possível. Atualmente moro em
-            Belo Horizonte - MG, com interesses profissionais e pessoais em me mudar
-            para São Paulo - SP em breve.
+            My name is Ana Carolina Gontijo Graça, I'm a 21 year old computational mathematics with emphasis in computer science undergraduate, expecting to graduate in December of 2019. Over my bachelor degree I've discovered my love for linear algebra and data science, which are deeply connected, and so I directed my studies thinking about those interests. The optional courses I chose to compose my graduation were A.I, M.L., Introduction to DB, Graph Theory, Game Theory and Software Engineering, the last of which is on course right now. All of them alongside the math base of the course helped me develop a good math modelling logic and analytics, being able to see and apply math in various computational methods. In my free time I like to play music, I'm not quite a musician, but I venture into singing and playing the piano and the guitar a little. I also like to draw, write, and play games (both video games and boardgames). Alongside studying for my bachelor degree I like to enroll in external courses related to my interests and to dedicate my time into volunteer working, whenever I can.
         </div>
+        {% else %}
+        <div class="col-12 about_text">
+            Meu nome é Ana Carolina Gontijo Graça, eu tenho 21 anos e sou uma graduanda de Matemática Computacional com ênfase em computação, com expectativa de graduação em dezembro de 2019. Durante minha graduação eu descobri minha paixão por álgebra linear e ciência dos dados, que são profundamente conexos, e então direcionei meus estudos pensando nesses interesses. As matérias optativas que eu escolhi para compor minha graduação foram Inteligência Artificial, Aprendizado de Máquinas, Introdução a Banco de Dados, Teoria dos Grafos, Teoria dos Jogos e Engenharia de Software, cuja última matéria ainda está em curso. Todo esse estudo juntamente com a base matemática do curso me ajudaram a desenvolver uma boa lógica de modelagem matemática e visão analítica, sendo capaz de ver e aplicar a matemática em diversos métodos computacionais. Em meu tempo livre eu gosto de tocar música, não sou uma musicista mas me aventuro em cantar, tocar teclado e violão. Eu também gosto de desenhar, escrever e jogar jogos (tanto de videogame quanto de tabuleiro). Enquanto estudo para minha graduação eu também tento sempre que possível estudar em cursos externos relacionados a minhas áreas de interesse e participar em trabalhos voluntários.
+        </div>
+        {% endif %}
         <div class="col-6">
             <p><a href="{{ cv_path_en }}" download><img src="{{ logo_files['document'] }}" class="logo"></a>:
-                CV em pdf (inglês)</p>
+                CV.pdf (<img src="{{ logo_files['uk'] }}" class="logo">)</p>
         </div>
         <div class="col-6">
             <p><a href="{{ cv_path_pt }}" download><img src="{{ logo_files['document'] }}" class="logo"></a>:
-                CV em pdf (português)</p>
+                CV.pdf (<img src="{{ logo_files['br'] }}" class="logo">)</p>
         </div>
     </div>
 </div>
