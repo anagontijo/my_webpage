@@ -38,8 +38,10 @@
                         </div>
                         <div class="col-md-1 col-sm-0"></div>
                         <div class="col-md-11 col-sm-12">
-                            <a href="{{ project['poster'] }}"><img src="{{ logo_files['document'] }}" class="logo"></a>:
-                                {{ project['poster_type'] }}
+                            {% for lan in project['poster']%}
+                                <a href="{{ project['poster'][lan] }}"><img src="{{ logo_files['document'] }}" class="logo"></a>:
+                                    {{ project['poster_type'][lan] }} (<img src="{{ logo_files[lan] }}">)
+                            {% endfor %}
                         </div>
                     </div>
             {% endfor %}

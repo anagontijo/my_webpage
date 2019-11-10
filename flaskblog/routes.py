@@ -55,7 +55,11 @@ variables = GlobalStore()
 def get_jobs():
     internships = []
     jobs = []
-    with open(os.getcwd()+"/flaskblog/static/docs/jobs.csv") as csvfile:
+    if variables.language == "pt":
+        path = "/flaskblog/static/docs/jobs_pt.csv"
+    else:
+        path = "/flaskblog/static/docs/jobs_en.csv"
+    with open(os.getcwd()+path) as csvfile:
         for row in csv.reader(csvfile, delimiter=',', quotechar='"'):
             if int(row[0]) == 0:
                 internships.append([])
@@ -69,7 +73,11 @@ def get_jobs():
 
 def get_projects():
     projects = []
-    with open(os.getcwd()+"/flaskblog/static/docs/projects.csv") as csvfile:
+    if variables.language == "pt":
+        path = "/flaskblog/static/docs/projects_pt.csv"
+    else:
+        path = "/flaskblog/static/docs/projects_en.csv"
+    with open(os.getcwd()+path) as csvfile:
         for row in csv.reader(csvfile, delimiter=',', quotechar='"'):
             projects.append({})
             projects[-1]["images"] = []
@@ -81,8 +89,15 @@ def get_projects():
             projects[-1]["github"] = row[2]
             projects[-1]["name"] = row[1]
             projects[-1]["description"] = row[3]
-            projects[-1]["poster"] = url_for('static', filename='docs/'+row[4])
-            projects[-1]["poster_type"] = row[5]
+            projects[-1]["poster"] = {}
+            projects[-1]["poster_type"] = {}
+
+            if len(row) > 4:
+                projects[-1]["poster"]["br"] = url_for('static', filename='docs/'+row[4])
+                projects[-1]["poster_type"]["br"] = row[5]
+            if len(row) > 6:
+                projects[-1]["poster"]["uk"] = url_for('static', filename='docs/'+row[6])
+                projects[-1]["poster_type"]["uk"] = row[7]
 
     return projects
 
